@@ -1,5 +1,6 @@
 import { useState } from "react";
 import convert from "color-convert";
+import * as Separator from "@radix-ui/react-separator";
 
 export function ColorInputs() {
   const [rgb, setRgb] = useState([255, 0, 0]);
@@ -64,144 +65,147 @@ export function ColorInputs() {
 
   return (
     <>
-      <div className="flex gap-5 mt-20 mb-10 border p-2">
-        <div>
-          <h3>RGB</h3>
-          <input
-            className="text-black"
-            type="number"
-            name="0"
-            value={rgb[0]}
-            onChange={handleRgbChange}
-            min="0"
-            max="255"
-          />
-          <input
-            className="text-black"
-            type="number"
-            name="1"
-            value={rgb[1]}
-            onChange={handleRgbChange}
-            min="0"
-            max="255"
-          />
-          <input
-            className="text-black"
-            type="number"
-            name="2"
-            value={rgb[2]}
-            onChange={handleRgbChange}
-            min="0"
-            max="255"
-          />
-        </div>
+      <div className="flex gap-16 mt-20 border border-slate-600 p-8 rounded-lg ">
+        <div className="flex flex-col items-center justify-between">
+          <h3 className="text-slate-200">RGB</h3>
+          <div className="flex gap-2 mt-2">
+            <input
+              className="text-slate-200 rounded-lg bg-slate-700 border border-slate-600 p-2.5 w-full"
+              type="number"
+              name="0"
+              value={rgb[0]}
+              onChange={handleRgbChange}
+              min="0"
+              max="255"
+            />
+            <input
+              className="text-slate-200 rounded-lg bg-slate-700 border border-slate-600 p-2.5 w-full"
+              type="number"
+              name="1"
+              value={rgb[1]}
+              onChange={handleRgbChange}
+              min="0"
+              max="255"
+            />
+            <input
+              className="text-slate-200 rounded-lg bg-slate-700 border border-slate-600 p-2.5 w-full"
+              type="number"
+              name="2"
+              value={rgb[2]}
+              onChange={handleRgbChange}
+              min="0"
+              max="255"
+            />
+          </div>
 
-        <div>
-          <h3>HSL</h3>
-          <input
-            type="number"
-            name="0"
-            value={hsl[0]}
-            onChange={handleHslChange}
-            min="0"
-            max="360"
-            className="text-black"
-          />
-          <input
-            type="number"
-            name="1"
-            value={hsl[1]}
-            onChange={handleHslChange}
-            min="0"
-            max="100"
-            className="text-black"
-          />
-          <input
-            type="number"
-            name="2"
-            value={hsl[2]}
-            onChange={handleHslChange}
-            min="0"
-            max="100"
-            className="text-black"
-          />
+          <h3 className="mt-3 text-slate-200">HSL</h3>
+          <div className="flex gap-2 mt-2">
+            <input
+              type="number"
+              name="0"
+              value={hsl[0]}
+              onChange={handleHslChange}
+              min="0"
+              max="360"
+              className="text-slate-200 rounded-lg bg-slate-700 border border-slate-600 p-2.5 w-full"
+            />
+            <input
+              type="number"
+              name="1"
+              value={hsl[1]}
+              onChange={handleHslChange}
+              min="0"
+              max="100"
+              className="text-slate-200 rounded-lg bg-slate-700 border border-slate-600 p-2.5 w-full"
+            />
+            <input
+              type="number"
+              name="2"
+              value={hsl[2]}
+              onChange={handleHslChange}
+              min="0"
+              max="100"
+              className="text-slate-200 rounded-lg bg-slate-700 border border-slate-600 p-2.5 w-full"
+            />
+          </div>
+          <h3 className="mt-3 text-slate-200">HSV</h3>
+          <div className="flex gap-2 mt-2">
+            <input
+              type="number"
+              name="0"
+              value={hsv[0]}
+              onChange={handleHsvChange}
+              min="0"
+              max="360"
+              className="text-slate-200 rounded-lg bg-slate-700 border border-slate-600 p-2.5 w-full"
+            />
+            <input
+              type="number"
+              name="1"
+              value={hsv[1]}
+              onChange={handleHsvChange}
+              min="0"
+              max="100"
+              className="text-slate-200 rounded-lg bg-slate-700 border border-slate-600 p-2.5 w-full"
+            />
+            <input
+              type="number"
+              name="2"
+              value={hsv[2]}
+              onChange={handleHsvChange}
+              min="0"
+              max="100"
+              className="text-slate-200 rounded-lg bg-slate-700 border border-slate-600 p-2.5 w-full"
+            />
+          </div>
+          <h3 className="mt-3 text-slate-200">CMYK</h3>
+          <div className="flex gap-2 mt-2">
+            <input
+              type="number"
+              name="0"
+              value={cmyk[0]}
+              onChange={handleCmykChange}
+              min="0"
+              max="100"
+              className="text-slate-200 rounded-lg bg-slate-700 border border-slate-600 p-2.5 w-full"
+            />
+            <input
+              type="number"
+              name="1"
+              value={cmyk[1]}
+              onChange={handleCmykChange}
+              min="0"
+              max="100"
+              className="text-slate-200 rounded-lg bg-slate-700 border border-slate-600 p-2.5 w-full"
+            />
+            <input
+              type="number"
+              name="2"
+              value={cmyk[2]}
+              onChange={handleCmykChange}
+              min="0"
+              max="100"
+              className="text-slate-200 rounded-lg bg-slate-700 border border-slate-600 p-2.5 w-full"
+            />
+            <input
+              type="number"
+              name="3"
+              value={cmyk[3]}
+              onChange={handleCmykChange}
+              min="0"
+              max="100"
+              className="text-slate-200 rounded-lg bg-slate-700 border border-slate-600 p-2.5 w-full"
+            />
+          </div>
         </div>
-        <div>
-          <h3>HSV</h3>
-          <input
-            type="number"
-            name="0"
-            value={hsv[0]}
-            onChange={handleHsvChange}
-            min="0"
-            max="360"
-            className="text-black"
-          />
-          <input
-            type="number"
-            name="1"
-            value={hsv[1]}
-            onChange={handleHsvChange}
-            min="0"
-            max="100"
-            className="text-black"
-          />
-          <input
-            type="number"
-            name="2"
-            value={hsv[2]}
-            onChange={handleHsvChange}
-            min="0"
-            max="100"
-            className="text-black"
-          />
-        </div>
-        <div>
-          <h3>CMYK</h3>
-          <input
-            type="number"
-            name="0"
-            value={cmyk[0]}
-            onChange={handleCmykChange}
-            min="0"
-            max="100"
-            className="text-black"
-          />
-          <input
-            type="number"
-            name="1"
-            value={cmyk[1]}
-            onChange={handleCmykChange}
-            min="0"
-            max="100"
-            className="text-black"
-          />
-          <input
-            type="number"
-            name="2"
-            value={cmyk[2]}
-            onChange={handleCmykChange}
-            min="0"
-            max="100"
-            className="text-black"
-          />
-          <input
-            type="number"
-            name="3"
-            value={cmyk[3]}
-            onChange={handleCmykChange}
-            min="0"
-            max="100"
-            className="text-black"
-          />
-        </div>
+        <Separator.Root className="h-[100px] w-[1px] bg-slate-400 rounded-xl place-self-center" orientation="vertical" decorative/>
+        <div
+          className="mt-5 h-80 w-80 rounded-md"
+          style={{
+            backgroundColor: `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`,
+          }}
+        />
       </div>
-      <div
-        className="mt-5 h-60 w-60 rounded-md"
-        style={{
-          backgroundColor: `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`,
-        }}
-      />
     </>
   );
 }
