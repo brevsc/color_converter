@@ -65,10 +65,10 @@ export function ColorInputs() {
 
   return (
     <>
-      <div className="flex gap-16 mt-20 border border-slate-600 p-8 rounded-lg ">
-        <div className="flex flex-col items-center justify-between">
+      <div className="flex flex-col sm:flex-row sm:justify-between  gap-16 mt-20 border border-slate-600 p-8 rounded-lg">
+        <div className="flex flex-col items-center w-full sm:w-1/2 gap-4">
           <h3 className="text-slate-200">RGB</h3>
-          <div className="flex gap-2 mt-2">
+          <div className="flex gap-2 mt-2 w-full">
             <input
               className="text-slate-200 rounded-lg bg-slate-700 border border-slate-600 p-2.5 w-full"
               type="number"
@@ -99,7 +99,7 @@ export function ColorInputs() {
           </div>
 
           <h3 className="mt-3 text-slate-200">HSL</h3>
-          <div className="flex gap-2 mt-2">
+          <div className="flex gap-2 mt-2 w-full">
             <input
               type="number"
               name="0"
@@ -128,8 +128,9 @@ export function ColorInputs() {
               className="text-slate-200 rounded-lg bg-slate-700 border border-slate-600 p-2.5 w-full"
             />
           </div>
+
           <h3 className="mt-3 text-slate-200">HSV</h3>
-          <div className="flex gap-2 mt-2">
+          <div className="flex gap-2 mt-2 w-full">
             <input
               type="number"
               name="0"
@@ -158,8 +159,8 @@ export function ColorInputs() {
               className="text-slate-200 rounded-lg bg-slate-700 border border-slate-600 p-2.5 w-full"
             />
           </div>
-          <h3 className="mt-3 text-slate-200">CMYK</h3>
-          <div className="flex gap-2 mt-2">
+          <h3 className="text-slate-200">CMYK</h3>
+          <div className="flex gap-2 mt-2 w-full">
             <input
               type="number"
               name="0"
@@ -198,9 +199,14 @@ export function ColorInputs() {
             />
           </div>
         </div>
-        <Separator.Root className="h-[100px] w-[1px] bg-slate-400 rounded-xl place-self-center" orientation="vertical" decorative/>
+
+        <Separator.Root
+          className="h-[100px] w-[1px] bg-slate-400 rounded-xl  place-self-center hidden sm:block"
+          orientation="vertical"
+          decorative
+        />
         <div
-          className="mt-5 h-80 w-80 rounded-md"
+          className="mt-5 h-80 w-80 sm:w-80 rounded-md place-self-center"
           style={{
             backgroundColor: `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`,
           }}
